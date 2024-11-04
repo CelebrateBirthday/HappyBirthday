@@ -1,6 +1,0 @@
-@HB_HostAddress = http://localhost:5199
-
-GET {{HB_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
