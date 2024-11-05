@@ -34,8 +34,8 @@ async function changetext() {
     const inputName = document.querySelector("#inputname");
     const inputMosha = document.querySelector("#inputage");
 
-    const name = inputName.value;
-    const mosha = parseInt(inputMosha.value) || null;
+    const name = inputName ? inputName.value || null : null;
+    const mosha = inputMosha ? parseInt(inputMosha.value) || null : null;
     const wish = Wish.value;
 
     await createWish(name, wish, mosha);
