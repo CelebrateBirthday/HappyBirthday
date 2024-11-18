@@ -70,16 +70,16 @@ async function createWish(name, wish, mosha) {
     }
 }
 
-setInterval(() => {
-    fetch('https://happybirthday-7gnr.onrender.com')
-        .then(response => {
-            if (response.ok) {
-                console.log('Pinged backend successfully:', response.status);
-            } else {
-                console.error('Backend responded with an error:', response.status);
-            }
-        })
-        .catch(err => {
-            console.error('Error pinging backend:', err);
-        });
-}, 840000);
+// setInterval(() => {
+//     fetch('https://happybirthday-7gnr.onrender.com')
+//         .then(response => {
+//             if (response.ok) {
+//                 console.log('Pinged backend successfully:', response.status);
+//             } else {
+//                 console.error('Backend responded with an error:', response.status);
+//             }
+//         })
+//         .catch(err => {
+//             console.error('Error pinging backend:', err);
+//         });
+// }, 840000);
