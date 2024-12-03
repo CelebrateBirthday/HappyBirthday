@@ -24,7 +24,7 @@ function rotateDiv() {
 }
 
 async function changetext() {
-    document.getElementById("text").innerHTML = "Wait a moment.";
+    document.getElementById("text").innerHTML = "Prit pak.";
 
     const Wish = document.querySelector("#inputwish");
     const inputName = document.querySelector("#inputname");
@@ -35,7 +35,7 @@ async function changetext() {
     const wish = Wish.value;
 
     await createWish(name, wish, mosha);
-    document.getElementById("text").innerHTML = "I hope your wish comes true.";
+    document.getElementById("text").innerHTML = "Shpresoj qe deshira jote te realizohet.";
 }
 
 async function createWish(name, wish, mosha) {
