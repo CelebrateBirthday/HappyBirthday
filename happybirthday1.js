@@ -3,15 +3,11 @@ let currentRotation = 0;
 document.addEventListener("DOMContentLoaded", function() {
     const input = document.querySelector("#inputwish");
     const btn = document.querySelector("#makeit");
-    
+
     input.addEventListener("input", validate);
-    
+
     function validate() {
-        if (input.value.trim() === "") {
-            btn.setAttribute("disabled", "disabled");
-        } else {
-            btn.removeAttribute("disabled");
-        }
+        btn.disabled = input.value.trim() === "";
     }
 });
 
@@ -28,8 +24,8 @@ function rotateDiv() {
 }
 
 async function changetext() {
-    document.getElementById("text").innerHTML = "I hope your wish comes true.";
-    
+    document.getElementById("text").innerHTML = "Wait a moment.";
+
     const Wish = document.querySelector("#inputwish");
     const inputName = document.querySelector("#inputname");
     const inputMosha = document.querySelector("#inputage");
@@ -39,16 +35,26 @@ async function changetext() {
     const wish = Wish.value;
 
     await createWish(name, wish, mosha);
+    document.getElementById("text").innerHTML = "I hope your wish comes true.";
 }
 
 async function createWish(name, wish, mosha) {
-    const url = `https://happybirthday-7gnr.onrender.com/api/Wish/MakeAWish`;
+    // Validate the wish
+    if (!wish || !wish.trim()) {
+        console.error("Wish is required!");
+        return; // Exit the function if the wish is not valid
+    }
+
+    // Create the wish data object
     const wishData = {
-        Name: name || "",
-        Wish: wish,
-        Mosha: mosha,
-        Viti: new Date()
+        Name: name || "", // Set empty string if name is null or empty
+        Wish: wish,        // Required field
+        Mosha: mosha || null, // If Mosha is null, send null
+        Viti: new Date()    // Automatically set Viti to the current date
     };
+
+    // Proceed to send the request to the backend if validation is successful
+    const url = `https://happybirthday-7gnr.onrender.com/api/Wish/MakeAWish`;
 
     try {
         const response = await fetch(url, {
@@ -66,10 +72,11 @@ async function createWish(name, wish, mosha) {
         const json = await response.json();
         console.log(json);
     } catch (error) {
-        console.error(error.message);
+        console.error("Error submitting the wish:", error.message);
     }
 }
 
+// Optional: Remove if you don't need it
 // setInterval(() => {
 //     fetch('https://happybirthday-7gnr.onrender.com')
 //         .then(response => {
@@ -82,4 +89,4 @@ async function createWish(name, wish, mosha) {
 //         .catch(err => {
 //             console.error('Error pinging backend:', err);
 //         });
-// }, 840000);
+// }, 870000);
