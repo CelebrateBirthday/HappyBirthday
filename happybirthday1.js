@@ -54,7 +54,7 @@ async function createWish(name, wish, mosha) {
     };
 
     // Proceed to send the request to the backend if validation is successful
-    const url = `https://happybirthday-7gnr.onrender.com/api/Wish/MakeAWish`;
+    const url = `https://localhost:7294/api/Wish/MakeAWish`;
 
     try {
         const response = await fetch(url, {
@@ -65,12 +65,19 @@ async function createWish(name, wish, mosha) {
             body: JSON.stringify(wishData)
         });
 
+        // Check if the response status is OK
         if (!response.ok) {
             throw new Error(`Response status: ${response.status}`);
         }
 
+        // Parse the response as JSON
         const json = await response.json();
-        console.log(json);
+        console.log("Server response:", json);
+
+        // Handle success (you can do something with the response here, e.g., show a message to the user)
+        if (json.message) {
+            console.log(json.message); // Success message
+        }
     } catch (error) {
         console.error("Error submitting the wish:", error.message);
     }
