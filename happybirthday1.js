@@ -24,7 +24,7 @@ function rotateDiv() {
 }
 
 async function changetext() {
-    document.getElementById("text").innerHTML = "Prit pak.";
+    document.getElementById("text").textContent = "Prit pak.";
 
     const Wish = document.querySelector("#inputwish");
     const inputName = document.querySelector("#inputname");
@@ -35,7 +35,7 @@ async function changetext() {
     const wish = Wish.value;
 
     await createWish(name, wish, mosha);
-    document.getElementById("text").innerHTML = "Shpresoj qe deshira jote te realizohet.";
+    document.getElementById("text").innerHTML = "Shpresoj që dëshira jote të realizohet.";
 }
 
 async function createWish(name, wish, mosha) {
@@ -54,7 +54,7 @@ async function createWish(name, wish, mosha) {
     };
 
     // Proceed to send the request to the backend if validation is successful
-    const url = `https://localhost:7294/api/Wish/MakeAWish`;
+    const url = `https://happybirthday-rzwc.onrender.com/api/Wish/MakeAWish`;
 
     try {
         const response = await fetch(url, {
@@ -65,9 +65,10 @@ async function createWish(name, wish, mosha) {
             body: JSON.stringify(wishData)
         });
 
-        // Check if the response status is OK
+        // Error handling
         if (!response.ok) {
-            throw new Error(`Response status: ${response.status}`);
+            const errorText = await response.text();
+            throw new Error(`Response status: ${response.status}, Error: ${errorText}`);
         }
 
         // Parse the response as JSON
