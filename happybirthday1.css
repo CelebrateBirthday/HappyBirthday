@@ -82,11 +82,11 @@ body {
 
 #top, #bottom {
     position: absolute;
-    top: 550px;
+    top: 510px;
     left: 50%;
-    margin-left: -145px;
-    height: 145px;
-    width: 230px;
+    margin-left: -180px;
+    height: 200px;
+    width: 280px;
     padding: 30px;
     background-color: #f5f5f5;
     z-index: -1;
@@ -94,7 +94,9 @@ body {
     border-top: solid 1px #fff;
 }
 
-#top { transition: transform .8s ease-in-out; }
+#top { 
+    transition: transform .8s ease-in-out;
+}
 
 #text, #inputwish, #makeit {
     position: absolute;
@@ -111,4 +113,28 @@ body {
     flex-direction: column;
     gap: 5px;
     transform: translateX(70px);
+}
+
+#text {
+    border: 2px solid #f5f5f5; /* Add a border around the div */
+    width: 300px; /* Set the width of the div */
+    overflow: hidden; /* Prevent the text from overflowing */
+    word-wrap: break-word; /* Break long words to fit the container */
+    margin-left: -150px;
+    margin-top: -50px;
+}
+
+#inputwish {
+    text-align: left;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    margin-top: 17px;
+    margin-left: -100px;
+}
+
+#makeit{
+    margin-top: 10px;
+    margin-left: -70px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
