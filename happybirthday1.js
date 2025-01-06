@@ -44,6 +44,9 @@ async function changetext() {
     await createWish(name, wish, mosha);
 
     document.getElementById("text").innerHTML = "Shpresoj që dëshira jote të realizohet."; //*Shows a message
+    setTimeout(() => {
+        document.getElementById("wrapper").style.display = "none"; //*Hides the "loading bar" after a certain time
+    }, 500);
 
     const wrapper = document.querySelector(".wrapper");
 
@@ -55,10 +58,6 @@ async function changetext() {
     }
 
     wrapper.style.animation = "moveInsideContainer 5s linear infinite";
-
-    setTimeout(() => {
-        document.getElementById("wrapper").style.display = "none"; //*Hides the "loading bar" after a certain time
-    }, 1500);
 }
 
 async function createWish(name, wish, mosha) {
