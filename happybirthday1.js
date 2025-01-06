@@ -100,8 +100,3 @@ async function createWish(name, wish, mosha) {
         console.error("Error submitting the wish:", error.message);
     }
 }
-
-//*asuhidjkad
-//!ajosdhh
-//?jdashfj
-//TODO iajshbdfihkgsdf
