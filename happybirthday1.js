@@ -11,49 +11,69 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+//*Opens the letter, hides and shows certain elements
 function rotateDiv() {
     currentRotation += 180;
     document.getElementById('top').style.transform = `rotateX(${currentRotation}deg) translateY(205px)`;
     document.getElementById("clickme").style.display = "none";
-
+    
+    //*waits before runing
     setTimeout(() => {
         document.getElementById("text").style.display = "block";
         document.getElementById("inputwish").style.display = "block";
         document.getElementById("makeit").style.display = "block";
+        document.getElementById("t").style.display = "block";
+        document.getElementById("y").style.display = "block";
+        document.getElementById("d").style.display = "block";
+        document.getElementById("i").style.display = "block";
     }, 800);
 }
 
 async function changetext() {
-    document.getElementById("text").textContent = "Prit pak.";
+    document.getElementById("text").textContent = "Prit pak."; //*Shows a message
+    document.getElementById("wrapper").style.display = "block";
 
     const Wish = document.querySelector("#inputwish");
     const inputName = document.querySelector("#inputname");
     const inputMosha = document.querySelector("#inputage");
 
-    const name = inputName ? inputName.value || null : null;
-    const mosha = inputMosha ? parseInt(inputMosha.value) || null : null;
-    const wish = Wish.value;
+    const name = inputName ? inputName.value || null : null; //*Gets the Name
+    const mosha = inputMosha ? parseInt(inputMosha.value) || null : null; //*Gets the age (Mosha)
+    const wish = Wish.value; //*Gets the Wish
 
     await createWish(name, wish, mosha);
-    document.getElementById("text").innerHTML = "Shpresoj që dëshira jote të realizohet.";
+
+    document.getElementById("text").innerHTML = "Shpresoj që dëshira jote të realizohet."; //*Shows a message
+
+    const wrapper = document.querySelector(".wrapper");
+
+    wrapper.style.left = "0px";
+    wrapper.style.top = "0px";
+
+    if (!container.contains(wrapper)) {
+        container.appendChild(wrapper);
+    }
+
+    wrapper.style.animation = "moveInsideContainer 5s linear infinite";
+
+    setTimeout(() => {
+        document.getElementById("wrapper").style.display = "none"; //*Hides the "loading bar" after a certain time
+    }, 1500);
 }
 
 async function createWish(name, wish, mosha) {
-    // Validate the wish
     if (!wish || !wish.trim()) {
         console.error("Wish is required!");
-        return; // Exit the function if the wish is not valid
+        return;
     }
 
-    // Create the wish data object
     const wishData = {
-        Name: name || "", // Set empty string if name is null or empty
-        Wish: wish,        // Required field
-        Mosha: mosha || null, // If Mosha is null, send null
-        Viti: new Date()    // Automatically set Viti to the current date
+        Name: name || "",
+        Wish: wish,
+        Mosha: mosha || null,
+        Viti: new Date()
     };
 
-    // Proceed to send the request to the backend if validation is successful
     const url = `https://happybirthday-rzwc.onrender.com/api/Wish/MakeAWish`;
 
     try {
@@ -65,35 +85,23 @@ async function createWish(name, wish, mosha) {
             body: JSON.stringify(wishData)
         });
 
-        // Error handling
         if (!response.ok) {
             const errorText = await response.text();
             throw new Error(`Response status: ${response.status}, Error: ${errorText}`);
         }
 
-        // Parse the response as JSON
         const json = await response.json();
         console.log("Server response:", json);
 
-        // Handle success (you can do something with the response here, e.g., show a message to the user)
         if (json.message) {
-            console.log(json.message); // Success message
+            console.log(json.message);
         }
     } catch (error) {
         console.error("Error submitting the wish:", error.message);
     }
 }
 
-// setInterval(() => {
-//     fetch('https://happybirthday-rzwc.onrender.com')
-//         .then(response => {
-//             if (response.ok) {
-//                 console.log('Pinged backend successfully:', response.status);
-//             } else {
-//                 console.error('Backend responded with an error:', response.status);
-//             }
-//         })
-//         .catch(err => {
-//             console.error('Error pinging backend:', err);
-//         });
-// }, 870000);
+//*asuhidjkad
+//!ajosdhh
+//?jdashfj
+//TODO iajshbdfihkgsdf
