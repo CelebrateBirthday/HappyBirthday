@@ -116,10 +116,10 @@ body {
 }
 
 #text {
-    border: 2px solid #f5f5f5; /* Add a border around the div */
-    width: 300px; /* Set the width of the div */
-    overflow: hidden; /* Prevent the text from overflowing */
-    word-wrap: break-word; /* Break long words to fit the container */
+    border: 2px solid #f5f5f5;
+    width: 300px;
+    overflow: hidden;
+    word-wrap: break-word;
     margin-left: -150px;
     margin-top: -50px;
 }

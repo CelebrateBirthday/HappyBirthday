@@ -84,17 +84,16 @@ async function createWish(name, wish, mosha) {
     }
 }
 
-// Optional: Remove if you don't need it
-setInterval(() => {
-    fetch('https://happybirthday-rzwc.onrender.com')
-        .then(response => {
-            if (response.ok) {
-                console.log('Pinged backend successfully:', response.status);
-            } else {
-                console.error('Backend responded with an error:', response.status);
-            }
-        })
-        .catch(err => {
-            console.error('Error pinging backend:', err);
-        });
-}, 870000);
+// setInterval(() => {
+//     fetch('https://happybirthday-rzwc.onrender.com')
+//         .then(response => {
+//             if (response.ok) {
+//                 console.log('Pinged backend successfully:', response.status);
+//             } else {
+//                 console.error('Backend responded with an error:', response.status);
+//             }
+//         })
+//         .catch(err => {
+//             console.error('Error pinging backend:', err);
+//         });
+// }, 870000);
