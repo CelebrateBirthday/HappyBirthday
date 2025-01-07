@@ -22,16 +22,11 @@ function rotateDiv() {
         document.getElementById("text").style.display = "block";
         document.getElementById("inputwish").style.display = "block";
         document.getElementById("makeit").style.display = "block";
-        document.getElementById("t").style.display = "block";
-        document.getElementById("y").style.display = "block";
-        document.getElementById("d").style.display = "block";
-        document.getElementById("i").style.display = "block";
     }, 800);
 }
 
 async function changetext() {
     document.getElementById("text").textContent = "Prit pak."; //*Shows a message
-    document.getElementById("wrapper").style.display = "block";
 
     const Wish = document.querySelector("#inputwish");
     const inputName = document.querySelector("#inputname");
@@ -42,22 +37,7 @@ async function changetext() {
     const wish = Wish.value; //*Gets the Wish
 
     await createWish(name, wish, mosha);
-
     document.getElementById("text").innerHTML = "Shpresoj që dëshira jote të realizohet."; //*Shows a message
-    setTimeout(() => {
-        document.getElementById("wrapper").style.display = "none"; //*Hides the "loading bar" after a certain time
-    }, 500);
-
-    const wrapper = document.querySelector(".wrapper");
-
-    wrapper.style.left = "0px";
-    wrapper.style.top = "0px";
-
-    if (!container.contains(wrapper)) {
-        container.appendChild(wrapper);
-    }
-
-    wrapper.style.animation = "moveInsideContainer 5s linear infinite";
 }
 
 async function createWish(name, wish, mosha) {
@@ -66,6 +46,7 @@ async function createWish(name, wish, mosha) {
         return;
     }
 
+    // Create the wish data object
     const wishData = {
         Name: name || "",
         Wish: wish,
@@ -73,6 +54,7 @@ async function createWish(name, wish, mosha) {
         Viti: new Date()
     };
 
+    // Proceed to send the request to the backend if validation is successful
     const url = `https://happybirthday-rzwc.onrender.com/api/Wish/MakeAWish`;
 
     try {
@@ -84,6 +66,7 @@ async function createWish(name, wish, mosha) {
             body: JSON.stringify(wishData)
         });
 
+        //! Error handling
         if (!response.ok) {
             const errorText = await response.text();
             throw new Error(`Response status: ${response.status}, Error: ${errorText}`);
@@ -92,6 +75,7 @@ async function createWish(name, wish, mosha) {
         const json = await response.json();
         console.log("Server response:", json);
 
+        //* Handle success (you can do something with the response here, e.g., show a message to the user)
         if (json.message) {
             console.log(json.message);
         }
@@ -99,3 +83,18 @@ async function createWish(name, wish, mosha) {
         console.error("Error submitting the wish:", error.message);
     }
 }
+
+//*Send requests to the backend every 14 minutes
+setInterval(() => {
+    fetch('https://happybirthday-rzwc.onrender.com')
+        .then(response => {
+            if (response.ok) {
+                console.log('Pinged backend successfully:', response.status);
+            } else {
+                console.error('Backend responded with an error:', response.status);
+            }
+        })
+        .catch(err => {
+            console.error('Error pinging backend:', err);
+        });
+}, 840000);
