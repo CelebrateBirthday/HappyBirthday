@@ -11,33 +11,55 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-//*Opens the letter, hides and shows certain elements
+//* Opens the letter, hides and shows certain elements
 function rotateDiv() {
     currentRotation += 180;
     document.getElementById('top').style.transform = `rotateX(${currentRotation}deg) translateY(205px)`;
     document.getElementById("clickme").style.display = "none";
     
-    //*waits before runing
+    //* Waits before runing
     setTimeout(() => {
         document.getElementById("text").style.display = "block";
         document.getElementById("inputwish").style.display = "block";
         document.getElementById("makeit").style.display = "block";
+        document.getElementById("t").style.display = "block";
+        document.getElementById("y").style.display = "block";
+        document.getElementById("d").style.display = "block";
+        document.getElementById("i").style.display = "block";
     }, 800);
 }
 
 async function changetext() {
-    document.getElementById("text").textContent = "Prit pak."; //*Shows a message
+    document.getElementById("text").textContent = "Prit pak."; //* Shows a message
+    document.getElementById("wrapper").style.display = "block"; //TODO If you don't want the "loading bar" just delete or comment this line
 
     const Wish = document.querySelector("#inputwish");
     const inputName = document.querySelector("#inputname");
     const inputMosha = document.querySelector("#inputage");
 
-    const name = inputName ? inputName.value || null : null; //*Gets the Name
-    const mosha = inputMosha ? parseInt(inputMosha.value) || null : null; //*Gets the age (Mosha)
-    const wish = Wish.value; //*Gets the Wish
+    const name = inputName ? inputName.value || null : null; //* Gets the Name
+    const mosha = inputMosha ? parseInt(inputMosha.value) || null : null; //* Gets the age (Mosha)
+    const wish = Wish.value; //* Gets the Wish
 
     await createWish(name, wish, mosha);
-    document.getElementById("text").innerHTML = "Shpresoj që dëshira jote të realizohet."; //*Shows a message
+
+    document.getElementById("text").innerHTML = "Shpresoj që dëshira jote të realizohet."; //* Shows a message
+    document.getElementById("wrapper").style.display = "none";
+
+    const wrapper = document.querySelector(".wrapper");
+
+    wrapper.style.left = "0px";
+    wrapper.style.top = "0px";
+
+    if (!container.contains(wrapper)) {
+        container.appendChild(wrapper);
+    }
+
+    wrapper.style.animation = "moveInsideContainer 5s linear infinite";
+
+    setTimeout(() => {
+        document.getElementById("wrapper").style.display = "none";
+    }, 2000); //* Hides the "loading bar" after a certain time
 }
 
 async function createWish(name, wish, mosha) {
@@ -84,7 +106,7 @@ async function createWish(name, wish, mosha) {
     }
 }
 
-//*Send requests to the backend every 14 minutes
+//* Send requests to the backend every 14 minutes
 setInterval(() => {
     fetch('https://happybirthday-rzwc.onrender.com')
         .then(response => {
