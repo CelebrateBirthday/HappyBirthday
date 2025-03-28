@@ -119,4 +119,4 @@ setInterval(() => {
         .catch(err => {
             console.error('Error pinging backend:', err);
         });
-}, 840000);
+}, 900000);
