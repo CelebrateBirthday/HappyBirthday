@@ -106,7 +106,7 @@ async function createWish(name, wish, mosha) {
     }
 }
 
-//* Send requests to the backend every 14 minutes
+//* Send requests to the backend every 15 minutes
 setInterval(() => {
     fetch('https://happybirthday-rzwc.onrender.com')
         .then(response => {
