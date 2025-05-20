@@ -97,7 +97,6 @@ async function createWish(name, wish, mosha) {
         const json = await response.json();
         console.log("Server response:", json);
 
-        //* Handle success (you can do something with the response here, e.g., show a message to the user)
         if (json.message) {
             console.log(json.message);
         }
@@ -106,7 +105,7 @@ async function createWish(name, wish, mosha) {
     }
 }
 
-//* Send requests to the backend every 15 minutes
+//* Send requests to the backend every 14.5 minutes
 setInterval(() => {
     fetch('https://happybirthday-rzwc.onrender.com')
         .then(response => {
@@ -119,4 +118,4 @@ setInterval(() => {
         .catch(err => {
             console.error('Error pinging backend:', err);
         });
-}, 900000);
+}, 870000); // 14.5 minutes in milliseconds
