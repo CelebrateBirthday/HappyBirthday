@@ -189,10 +189,10 @@ body {
 #d{
     position: absolute;
     margin-top: 700px;
-    margin-left: 412px;
+    margin-left: 420px;
     height: 100px;
     width: 100px;
-    border-left: 21px solid #f5f5f5;
+    border-left: 10px solid #f5f5f5;
     background-color: #ffd1a8;
     display: none;
 }
