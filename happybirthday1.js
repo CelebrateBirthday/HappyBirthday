@@ -104,18 +104,3 @@ async function createWish(name, wish, mosha) {
         console.error("Error submitting the wish:", error.message);
     }
 }
-
-//* Send requests to the backend every 14.5 minutes
-setInterval(() => {
-    fetch('https://happybirthday-rzwc.onrender.com')
-        .then(response => {
-            if (response.ok) {
-                console.log('Pinged backend successfully:', response.status);
-            } else {
-                console.error('Backend responded with an error:', response.status);
-            }
-        })
-        .catch(err => {
-            console.error('Error pinging backend:', err);
-        });
-}, 870000); // 14.5 minutes in milliseconds
