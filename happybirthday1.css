@@ -163,6 +163,7 @@ body {
     width: 100px;
     left: 50%;
     transform: translateX(-50%);
+    display: none;
 }
 
 #wrapper {
