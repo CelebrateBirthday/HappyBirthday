@@ -139,10 +139,10 @@ body {
 }
 
 #text {
-    width: 300px;
+    width: 310px;
     overflow: hidden;
     word-wrap: break-word;
-    margin-left: -150px;
+    margin-left: -155px;
     margin-top: -50px;
     font-family: "Times New Roman", serif;
 }
@@ -157,7 +157,7 @@ body {
 
 #makeit{
     margin-top: 20px;
-    width: 100px;
+    width: 150px;
 }
 
 #wrapper {
