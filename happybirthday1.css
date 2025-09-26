@@ -157,14 +157,12 @@ body {
 
 #makeit{
     margin-top: 20px;
-    margin-left: -70px;
-    padding-left: 20px;
-    padding-right: 20px;
+    width: 100px;
 }
 
 #wrapper {
     background-color: #3760C9;
-    margin-top: 714.8px;
+    margin-top: 990px;
     margin-left: -395px;
     transform: scale(.127) rotate(-25deg);
     position: fixed;
