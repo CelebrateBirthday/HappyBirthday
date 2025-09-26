@@ -19,7 +19,7 @@ function rotateDiv() {
     
     //* Waits before runing
     setTimeout(() => {
-        document.getElementById("text").style.display = "block";
+        document.getElementById("message").style.display = "block";
         document.getElementById("inputwish").style.display = "block";
         document.getElementById("makeit").style.display = "block";
         document.getElementById("t").style.display = "block";
@@ -30,7 +30,7 @@ function rotateDiv() {
 }
 
 async function changetext() {
-    document.getElementById("text").textContent = "Prit pak."; //* Shows a message
+    document.getElementById("message").textContent = "Prit pak."; //* Shows a message
     document.getElementById("wrapper").style.display = "block"; //TODO If you don't want the "loading bar" just delete or comment this line
 
     const Wish = document.querySelector("#inputwish");
@@ -43,7 +43,7 @@ async function changetext() {
 
     await createWish(name, wish, mosha);
 
-    document.getElementById("text").innerHTML = "Shpresoj që dëshira jote të realizohet."; //* Shows a message
+    document.getElementById("message").innerHTML = "Shpresoj që dëshira jote të realizohet."; //* Shows a message
     document.getElementById("wrapper").style.display = "none";
 
     const wrapper = document.querySelector(".wrapper");

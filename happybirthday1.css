@@ -121,13 +121,12 @@ body {
     transition: transform .8s ease-in-out;
 }
 
-#text, #inputwish, #makeit {
+#inputwish {
     position: absolute;
     left: 50%;
     display: none;
 }
 
-#text { top: 380px; margin-left: -120px; }
 #inputwish { top: 685px; margin-left: -90px; }
 
 .container {
@@ -137,13 +136,17 @@ body {
     transform: translateX(70px);
 }
 
-#text {
+#message {
     width: 310px;
     overflow: hidden;
     word-wrap: break-word;
-    margin-left: -155px;
     margin-top: -50px;
     font-family: "Times New Roman", serif;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 380px;
+    display: none;
 }
 
 #inputwish {
@@ -155,8 +158,11 @@ body {
 }
 
 #makeit{
-    margin-top: 20px;
-    width: 150px;
+    position: absolute;
+    top: 740px;
+    width: 100px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #wrapper {
