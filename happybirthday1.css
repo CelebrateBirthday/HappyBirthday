@@ -7,14 +7,32 @@ body {
     transform: scale(.75);
 }
 
-#text_1, #clickme {
-    transform: scale(1.5);
+#string_1 {
+    height: 160px;
+    width: 280px;
+    border-radius: 50%;
+    position: absolute;
+    left: -25%;
+    top: -90px;
+    border: 5px solid blue;
+    display: flex;
+    flex-direction: row;
+}
+
+#H, #A, #P1, #P2, #Y {
+    position: relative;
+    top: 200px;
+    left: 100px;
 }
 
 #clickme {
     position: absolute;
-    top: 70px;
-    margin-left: 280px;
+    top: 100px;
+    margin-left: 320px;
+    height: 40px;
+    width: 100px;
+    font-size: large;
+    font-weight: bold;
 }
 
 #cake, #candles, #layer_middle, #layer_bottom {
@@ -22,7 +40,7 @@ body {
 }
 
 #cake {
-    top: -90px;
+    top: 0px;
     left: 50%;
     margin-left: -80px;
 }
@@ -79,6 +97,11 @@ body {
 #layer_top { margin-top: 180px; }
 #layer_middle { top: 218px; z-index: -1; }
 #layer_bottom { top: 257px; z-index: -2; }
+
+#card {
+    position: absolute;
+    top: 110px;
+}
 
 #top, #bottom {
     position: absolute;
@@ -167,7 +190,6 @@ body {
 
 #t{
     position: absolute;
-    margin-top: 700px;
     margin-left: -439px;
     height: 100px;
     width: 100px;
@@ -178,7 +200,6 @@ body {
 
 #y{
     position: absolute;
-    margin-top: 710px;
     margin-left: -355.1px;
     height: 150px;
     width: 4px;
@@ -188,7 +209,6 @@ body {
 
 #d{
     position: absolute;
-    margin-top: 700px;
     margin-left: 420px;
     height: 100px;
     width: 100px;
@@ -199,10 +219,13 @@ body {
 
 #i{
     position: absolute;
-    margin-top: 710px;
     margin-left: 332.5px;
     height: 150px;
     width: 4px;
     background-color: #000;
     display: none;
+}
+
+#t, #y, #d, #i {
+    top: 430px;
 }
