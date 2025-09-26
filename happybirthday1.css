@@ -129,7 +129,6 @@ body {
 
 #text { top: 380px; margin-left: -120px; }
 #inputwish { top: 685px; margin-left: -90px; }
-#makeit { top: 720px; margin-left: -60px; }
 
 .container {
     display: flex;
@@ -150,7 +149,7 @@ body {
 #inputwish {
     text-align: left;
     padding-left: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid transparent;
     margin-top: 27px;
     margin-left: -108px;
 }
