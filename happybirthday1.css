@@ -8,12 +8,12 @@ body {
 }
 
 #string_1 {
-    height: 160px;
+    height: 170px;
     width: 280px;
     border-radius: 50%;
     position: absolute;
-    left: -25%;
-    top: -90px;
+    left: -20%;
+    top: -120px;
     border: 5px solid blue;
     display: flex;
     flex-direction: row;
