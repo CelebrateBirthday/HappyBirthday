@@ -23,6 +23,49 @@ body {
     position: relative;
     top: 200px;
     left: 100px;
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(50% 50%, 0 0, 100% 0);
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#H { 
+    background-color: #ff0000;
+    left: 0px;
+    top: 147px;
+    transform: rotate(27deg);
+}
+
+#A {
+    background-color: #09ff00;
+    left: 10px;
+    top: 169px;
+    transform: rotate(9deg);
+}
+
+#P1 {
+    background-color: #0099ff;
+    left: 18px;
+    top: 172px;
+    transform: rotate(-4deg);
+}
+
+#P2 {
+    background-color: #0026ff;
+    left: 27px;
+    top: 160px;
+    transform: rotate(-19deg);
+}
+
+#Y { 
+    background-color: #b700ff;
+    left: 30px;
+    top: 126px;
+    transform: rotate(-38deg);
 }
 
 #clickme {
