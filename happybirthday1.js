@@ -22,10 +22,6 @@ function rotateDiv() {
         document.getElementById("message").style.display = "block";
         document.getElementById("inputwish").style.display = "block";
         document.getElementById("makeit").style.display = "block";
-        document.getElementById("t").style.display = "block";
-        document.getElementById("y").style.display = "block";
-        document.getElementById("d").style.display = "block";
-        document.getElementById("i").style.display = "block";
     }, 800);
 }
 
@@ -77,7 +73,7 @@ async function createWish(name, wish, mosha) {
     };
 
     // Proceed to send the request to the backend if validation is successful
-    const url = `https://happybirthday-rzwc.onrender.com/api/Wish/MakeAWish`;
+    const url = `https://happybirthday-rzwc.onrender.com/api/Wish/MakeAWishsssssssssssssssssssssssssssssssssssssssssssss`;
 
     try {
         const response = await fetch(url, {
