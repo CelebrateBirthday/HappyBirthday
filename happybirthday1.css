@@ -151,7 +151,7 @@ body {
     top: 510px;
     left: 50%;
     margin-left: -180px;
-    height: 200px;
+    height: 230px;
     width: 280px;
     padding: 30px;
     background-color: #f5f5f5;
@@ -163,14 +163,6 @@ body {
 #top { 
     transition: transform .8s ease-in-out;
 }
-
-#inputwish {
-    position: absolute;
-    left: 50%;
-    display: none;
-}
-
-#inputwish { top: 685px; margin-left: -90px; }
 
 .container {
     display: flex;
@@ -193,16 +185,19 @@ body {
 }
 
 #inputwish {
-    text-align: left;
+    display: none;
     padding-left: 10px;
     border: 1px solid transparent;
     margin-top: 27px;
-    margin-left: -108px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 710px;
 }
 
 #makeit{
     position: absolute;
-    top: 740px;
+    top: 765px;
     width: 100px;
     left: 50%;
     transform: translateX(-50%);
