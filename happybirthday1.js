@@ -73,7 +73,7 @@ async function createWish(name, wish, mosha) {
     };
 
     // Proceed to send the request to the backend if validation is successful
-    const url = `https://happybirthday-rzwc.onrender.com/api/Wish/MakeAWishsssssssssssssssssssssssssssssssssssssssssssss`;
+    const url = `https://happybirthday-rzwc.onrender.com/api/Wish/MakeAWish`;
 
     try {
         const response = await fetch(url, {
