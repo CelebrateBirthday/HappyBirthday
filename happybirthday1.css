@@ -4,8 +4,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: scale(.75);
+    transform: scale(0.7);
     overflow-x: hidden;
+    position: relative;
 }
 
 #string_1, #string_2, #string_3 {
@@ -207,12 +208,12 @@ left: 85px;
 #card {
     position: absolute;
     top: 700px;
-    width: 120%;
+    width: 135%;
     height: auto;
 }
 
 #top, #bottom {
-    height: 340px;
+    height: 460px;
     width: 100%;
     background-color: #f5f5f5;
     border: solid 4px #000;
@@ -221,7 +222,7 @@ left: 85px;
 }
 
 #top {
-    transition: transform .8s ease-in-out;
+    transition: transform 1s ease-in-out;
 }
 
 #bottom {
@@ -236,15 +237,15 @@ left: 85px;
 }
 
 #message {
-    width: 90%;
+    width: 93%;
     word-wrap: break-word;
     overflow-wrap: break-word;
     font-family: "Times New Roman", serif;
     display: none;
-    margin: 30px;
+    margin: 20px;
     position: inherit;
     z-index: 1;
-    top: -30%;
+    top: -23%;
 }
 
 #inputwish {
@@ -253,18 +254,18 @@ left: 85px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 410px;
-    scale: 1.2;
+    bottom: 29%;
+    scale: 1;
 }
 
 #makeit{
     position: absolute;
-    top: 445px;
+    bottom: 25%;
     width: 100px;
     left: 50%;
     transform: translateX(-50%);
     display: none;
-    scale: 1.2;
+    scale: 1;
 }
 
 #wrapper {
